@@ -1,0 +1,751 @@
+Dependencies for Project 'monster_4_motor_control', Target 'monster_4_motor_control': (DO NOT MODIFY !)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c)(0x5B0D5ABA)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\stm32f1xx_hal.o --omf_browse monster_4_motor_control\stm32f1xx_hal.crf --depend monster_4_motor_control\stm32f1xx_hal.d)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B0D5AB9)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5B0EC500)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5B0D5AB9)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x5B0D59C5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x5B0D599A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55AF9EB2)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x5B0D5AB9)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c)(0x5B0D5ABA)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\stm32f1xx_hal_cortex.o --omf_browse monster_4_motor_control\stm32f1xx_hal_cortex.crf --depend monster_4_motor_control\stm32f1xx_hal_cortex.d)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B0D5AB9)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5B0EC500)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5B0D5AB9)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x5B0D59C5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x5B0D599A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55AF9EB2)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x5B0D5AB9)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c)(0x5B0D5ABA)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\stm32f1xx_hal_flash_ex.o --omf_browse monster_4_motor_control\stm32f1xx_hal_flash_ex.crf --depend monster_4_motor_control\stm32f1xx_hal_flash_ex.d)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B0D5AB9)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5B0EC500)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5B0D5AB9)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x5B0D59C5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x5B0D599A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55AF9EB2)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x5B0D5AB9)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c)(0x5B0D5ABA)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\stm32f1xx_hal_adc.o --omf_browse monster_4_motor_control\stm32f1xx_hal_adc.crf --depend monster_4_motor_control\stm32f1xx_hal_adc.d)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B0D5AB9)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5B0EC500)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5B0D5AB9)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x5B0D59C5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x5B0D599A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55AF9EB2)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x5B0D5AB9)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c)(0x5B0D5ABA)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\stm32f1xx_hal_dma.o --omf_browse monster_4_motor_control\stm32f1xx_hal_dma.crf --depend monster_4_motor_control\stm32f1xx_hal_dma.d)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B0D5AB9)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5B0EC500)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5B0D5AB9)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x5B0D59C5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x5B0D599A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55AF9EB2)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x5B0D5AB9)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c)(0x5B0D5ABA)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\stm32f1xx_hal_pwr.o --omf_browse monster_4_motor_control\stm32f1xx_hal_pwr.crf --depend monster_4_motor_control\stm32f1xx_hal_pwr.d)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B0D5AB9)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5B0EC500)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5B0D5AB9)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x5B0D59C5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x5B0D599A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55AF9EB2)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x5B0D5AB9)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c)(0x5B0D5ABA)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\stm32f1xx_hal_flash.o --omf_browse monster_4_motor_control\stm32f1xx_hal_flash.crf --depend monster_4_motor_control\stm32f1xx_hal_flash.d)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B0D5AB9)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5B0EC500)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5B0D5AB9)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x5B0D59C5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x5B0D599A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55AF9EB2)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x5B0D5AB9)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c)(0x5B0D5ABA)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\stm32f1xx_hal_adc_ex.o --omf_browse monster_4_motor_control\stm32f1xx_hal_adc_ex.crf --depend monster_4_motor_control\stm32f1xx_hal_adc_ex.d)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B0D5AB9)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5B0EC500)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5B0D5AB9)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x5B0D59C5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x5B0D599A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55AF9EB2)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x5B0D5AB9)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c)(0x5B0D5ABA)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\stm32f1xx_hal_rcc_ex.o --omf_browse monster_4_motor_control\stm32f1xx_hal_rcc_ex.crf --depend monster_4_motor_control\stm32f1xx_hal_rcc_ex.d)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B0D5AB9)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5B0EC500)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5B0D5AB9)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x5B0D59C5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x5B0D599A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55AF9EB2)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x5B0D5AB9)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c)(0x5B0D5ABA)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\stm32f1xx_hal_i2c.o --omf_browse monster_4_motor_control\stm32f1xx_hal_i2c.crf --depend monster_4_motor_control\stm32f1xx_hal_i2c.d)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B0D5AB9)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5B0EC500)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5B0D5AB9)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x5B0D59C5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x5B0D599A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55AF9EB2)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x5B0D5AB9)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c)(0x5B0D5ABA)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\stm32f1xx_hal_tim.o --omf_browse monster_4_motor_control\stm32f1xx_hal_tim.crf --depend monster_4_motor_control\stm32f1xx_hal_tim.d)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B0D5AB9)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5B0EC500)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5B0D5AB9)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x5B0D59C5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x5B0D599A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55AF9EB2)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x5B0D5AB9)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c)(0x5B0D5ABA)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\stm32f1xx_hal_gpio.o --omf_browse monster_4_motor_control\stm32f1xx_hal_gpio.crf --depend monster_4_motor_control\stm32f1xx_hal_gpio.d)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B0D5AB9)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5B0EC500)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5B0D5AB9)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x5B0D59C5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x5B0D599A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55AF9EB2)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x5B0D5AB9)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c)(0x5B0D5ABA)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\stm32f1xx_hal_tim_ex.o --omf_browse monster_4_motor_control\stm32f1xx_hal_tim_ex.crf --depend monster_4_motor_control\stm32f1xx_hal_tim_ex.d)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B0D5AB9)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5B0EC500)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5B0D5AB9)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x5B0D59C5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x5B0D599A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55AF9EB2)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x5B0D5AB9)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c)(0x5B0D5ABA)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\stm32f1xx_hal_rcc.o --omf_browse monster_4_motor_control\stm32f1xx_hal_rcc.crf --depend monster_4_motor_control\stm32f1xx_hal_rcc.d)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B0D5AB9)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5B0EC500)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5B0D5AB9)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x5B0D59C5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x5B0D599A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55AF9EB2)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x5B0D5AB9)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c)(0x5B0D5ABA)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\stm32f1xx_hal_gpio_ex.o --omf_browse monster_4_motor_control\stm32f1xx_hal_gpio_ex.crf --depend monster_4_motor_control\stm32f1xx_hal_gpio_ex.d)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B0D5AB9)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5B0EC500)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5B0D5AB9)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x5B0D59C5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x5B0D599A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55AF9EB2)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x5B0D5AB9)
+F (../Src/system_stm32f1xx.c)(0x5B0D599B)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\system_stm32f1xx.o --omf_browse monster_4_motor_control\system_stm32f1xx.crf --depend monster_4_motor_control\system_stm32f1xx.d)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x5B0D59C5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x5B0D599A)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B0D5AB9)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5B0EC500)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5B0D5AB9)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55AF9EB2)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x5B0D5AB9)
+F (../Middlewares/Third_Party/FreeRTOS/Source/queue.c)(0x5B0D59D5)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\queue.o --omf_browse monster_4_motor_control\queue.crf --depend monster_4_motor_control\queue.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55AF9EB2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55AF9EB2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B0D59D5)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AF9EB2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Inc/FreeRTOSConfig.h)(0x5B0EC4FA)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x5B0D59D5)
+F (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c)(0x5B0D59D5)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\cmsis_os.o --omf_browse monster_4_motor_control\cmsis_os.crf --depend monster_4_motor_control\cmsis_os.d)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55AF9EB2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B0D59D5)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AF9EB2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Inc/FreeRTOSConfig.h)(0x5B0EC4FA)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x5B0D59D5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5B0D59C5)
+F (../Middlewares/Third_Party/FreeRTOS/Source/timers.c)(0x5B0D59D5)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\timers.o --omf_browse monster_4_motor_control\timers.crf --depend monster_4_motor_control\timers.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55AF9EB2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B0D59D5)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AF9EB2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Inc/FreeRTOSConfig.h)(0x5B0EC4FA)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x5B0D59D5)
+F (../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c)(0x5B0D59D5)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\event_groups.o --omf_browse monster_4_motor_control\event_groups.crf --depend monster_4_motor_control\event_groups.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55AF9EB2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B0D59D5)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AF9EB2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Inc/FreeRTOSConfig.h)(0x5B0EC4FA)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x5B0D59D5)
+F (../Middlewares/Third_Party/FreeRTOS/Source/croutine.c)(0x5B0D59D5)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\croutine.o --omf_browse monster_4_motor_control\croutine.crf --depend monster_4_motor_control\croutine.d)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B0D59D5)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AF9EB2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Inc/FreeRTOSConfig.h)(0x5B0EC4FA)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/croutine.h)(0x5B0D59D5)
+F (../Middlewares/Third_Party/FreeRTOS/Source/list.c)(0x5B0D59D5)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\list.o --omf_browse monster_4_motor_control\list.crf --depend monster_4_motor_control\list.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55AF9EB2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B0D59D5)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AF9EB2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Inc/FreeRTOSConfig.h)(0x5B0EC4FA)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5B0D59D5)
+F (../Middlewares/Third_Party/FreeRTOS/Source/tasks.c)(0x5B0D59D5)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\tasks.o --omf_browse monster_4_motor_control\tasks.crf --depend monster_4_motor_control\tasks.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55AF9EB2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55AF9EB2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B0D59D5)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AF9EB2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Inc/FreeRTOSConfig.h)(0x5B0EC4FA)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/StackMacros.h)(0x5B0D59D5)
+F (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/port.c)(0x5B0D59D5)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\port.o --omf_browse monster_4_motor_control\port.crf --depend monster_4_motor_control\port.d)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B0D59D5)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AF9EB2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Inc/FreeRTOSConfig.h)(0x5B0EC4FA)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5B0D59D5)
+F (../Src/stm32f1xx_hal_timebase_TIM.c)(0x5B0EC4FF)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\stm32f1xx_hal_timebase_tim.o --omf_browse monster_4_motor_control\stm32f1xx_hal_timebase_tim.crf --depend monster_4_motor_control\stm32f1xx_hal_timebase_tim.d)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B0D5AB9)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5B0EC500)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5B0D5AB9)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x5B0D59C5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x5B0D599A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55AF9EB2)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x5B0D5AB9)
+F (../Src/stm32f1xx_hal_msp.c)(0x5B0EC4FD)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\stm32f1xx_hal_msp.o --omf_browse monster_4_motor_control\stm32f1xx_hal_msp.crf --depend monster_4_motor_control\stm32f1xx_hal_msp.d)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B0D5AB9)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5B0EC500)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5B0D5AB9)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x5B0D59C5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x5B0D599A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55AF9EB2)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x5B0D5AB9)
+F (../Src/freertos.c)(0x5B0EC4FA)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\freertos.o --omf_browse monster_4_motor_control\freertos.crf --depend monster_4_motor_control\freertos.d)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B0D59D5)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AF9EB2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Inc/FreeRTOSConfig.h)(0x5B0EC4FA)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5B0D59D5)
+F (../Src/stm32f1xx_it.c)(0x5B0EC4FA)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\stm32f1xx_it.o --omf_browse monster_4_motor_control\stm32f1xx_it.crf --depend monster_4_motor_control\stm32f1xx_it.d)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B0D5AB9)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5B0EC500)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5B0D5AB9)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x5B0D59C5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x5B0D599A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55AF9EB2)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x5B0D5AB9)
+I (../Inc/stm32f1xx_it.h)(0x5B0EC4FA)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B0D59D5)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AF9EB2)
+I (../Inc/FreeRTOSConfig.h)(0x5B0EC4FA)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x5B0D59D5)
+F (../Src/main.c)(0x5B0F1699)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include --C99-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o monster_4_motor_control\main.o --omf_browse monster_4_motor_control\main.crf --depend monster_4_motor_control\main.d)
+I (../Inc/main.h)(0x5B0EC500)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B0D5AB9)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5B0EC500)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5B0D5AB9)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x5B0D599A)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x5B0D59C5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF9EB2)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5B0D59C5)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x5B0D599A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55AF9EB2)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x5B0D5AB9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x5B0D5AB9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B0D59D5)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AF9EB2)
+I (../Inc/FreeRTOSConfig.h)(0x5B0EC4FA)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x5B0D59D5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x5B0D59D5)
+F (startup_stm32f103xb.s)(0x5B0EC504)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1" -I..\Inc-I C:\Users\Nandopolis\Documents\CubeMx\monster_4_motor_control\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include--pd "__UVISION_VERSION SETA 516" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1"--list startup_stm32f103xb.lst --xref -o monster_4_motor_control\startup_stm32f103xb.o --depend monster_4_motor_control\startup_stm32f103xb.d)
