@@ -52,7 +52,8 @@
 #include "cmsis_os.h"
 
 /* USER CODE BEGIN Includes */
-
+#define ARM_MATH_CM3
+#include "arm_math.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -68,7 +69,7 @@ osThreadId ControlTaskHandle;
 uint32_t ControlTaskBuffer[ 512 ];
 osStaticThreadDef_t ControlTaskControlBlock;
 osThreadId SysIdTaskHandle;
-uint32_t SysIdTaskBuffer[ 512 ];
+uint32_t SysIdTaskBuffer[ 1024 ];
 osStaticThreadDef_t SysIdTaskControlBlock;
 osThreadId I2CTaskHandle;
 uint32_t I2CTaskBuffer[ 128 ];
@@ -91,16 +92,27 @@ enum MOTOR_enum {
 	MOTOR_MAX,
 	SCAN_MAX,
 };
+enum MONSTER_K {
+	K_B,
+	K_A,
+	
+	K_MAX,
+};
+float32_t bemf_mV[MOTOR_MAX] = {0.0, 0.0, 0.0, 0.0};
+float32_t d_global[MOTOR_MAX] = {0.0, 0.0, 0.0, 0.0};	// vel estimation in rad/s
+float32_t w_n[MOTOR_MAX][4] =	{	{0.0, 0.0, 0.0, 0.0}, \
+																{0.0, 0.0, 0.0, 0.0}, \
+																{0.0, 0.0, 0.0, 0.0}, \
+																{0.0, 0.0, 0.0, 0.0}};
+uint16_t r_motor_mOhm[MOTOR_MAX] = {6500, 5650, 0, 0};
+uint16_t monster_k[MOTOR_MAX][K_MAX] = {{2108, 4322}, {0, 0}, {0, 0}, {0, 0}};
+uint16_t r_sense_Ohm = 1500;
 volatile uint16_t adc_scan[SCAN_MAX] = {0, 0, 0, 0};
 volatile uint16_t adc_scan_avg[SCAN_MAX] = {0, 0, 0, 0};
-float bemf_mV[MOTOR_MAX] = {0.0, 0.0, 0.0, 0.0};
-uint16_t r_motor_mOhm[MOTOR_MAX] = {6500, 5650, 0, 0};
-uint16_t r_sense_Ohm = 1500;
-typedef struct {
-	uint32_t K_A;
-	uint32_t K_B;
-} CurrentSensingK;
-CurrentSensingK monster_k[MOTOR_MAX] = {{4322, 2108}, {0, 0}, {0, 0}, {0, 0}};
+float32_t u_n_global[MOTOR_MAX][4] = {{0.0, 0.0, 0.0, 0.0}, \
+																			{0.0, 0.0, 0.0, 0.0}, \
+																			{0.0, 0.0, 0.0, 0.0}, \
+																			{0.0, 0.0, 0.0, 0.0}};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -193,7 +205,7 @@ int main(void)
   ControlTaskHandle = osThreadCreate(osThread(ControlTask), NULL);
 
   /* definition and creation of SysIdTask */
-  osThreadStaticDef(SysIdTask, StartSysIdTask, osPriorityNormal, 0, 512, SysIdTaskBuffer, &SysIdTaskControlBlock);
+  osThreadStaticDef(SysIdTask, StartSysIdTask, osPriorityNormal, 0, 1024, SysIdTaskBuffer, &SysIdTaskControlBlock);
   SysIdTaskHandle = osThreadCreate(osThread(SysIdTask), NULL);
 
   /* definition and creation of I2CTask */
@@ -621,12 +633,13 @@ void StartControlTask(void const * argument)
 {
 
   /* USER CODE BEGIN 5 */
-	uint8_t i = 0;
+	uint8_t i, j;
+	float32_t u[MOTOR_MAX] = {0.0, 0.0, 0.0, 0.0};
 	uint16_t pwm_value[MOTOR_MAX] = {0, 0, 0, 0};
-	float v_adc_mV[SCAN_MAX];
-	float v_bat_mV;
-	float i_motor_mA[MOTOR_MAX] = {0.0, 0.0, 0.0, 0.0};
-	// float bemf_mV[MOTOR_MAX] = {0.0, 0.0, 0.0, 0.0};
+	float32_t v_adc_mV[SCAN_MAX];
+	float32_t v_bat_mV;
+	float32_t i_motor_mA[MOTOR_MAX] = {0.0, 0.0, 0.0, 0.0};
+	// float32_t bemf_mV[MOTOR_MAX] = {0.0, 0.0, 0.0, 0.0};
 	
 	HAL_ADCEx_Calibration_Start(&hadc1);
 	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
@@ -644,8 +657,17 @@ void StartControlTask(void const * argument)
   for(;;)
   {
 		osSemaphoreWait(ControlBinarySemHandle, osWaitForever);
-		HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+		HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
 		
+		// data update
+		for (i = 0; i < MOTOR_MAX; i++) {
+			u_n_global[i][3] = u_n_global[i][2];
+			u_n_global[i][2] = d_global[i];
+			u_n_global[i][1] = u_n_global[i][0];
+			u_n_global[i][0] = u[i];
+		}
+		
+		// data measurement
 		for (i = 0; i < SCAN_MAX; i++) {
 			v_adc_mV[i] = adc_scan_avg[i] * 3300.0 / 4095;
 		}
@@ -653,20 +675,26 @@ void StartControlTask(void const * argument)
 		// v_bat_mV = 12000.0;
 		
 		for (i = 0; i < MOTOR_MAX; i++) {
-			if (HAL_GPIO_ReadPin(getGpioPort(i), getGpioPin(i)) == GPIO_PIN_SET)
-				i_motor_mA[i] = v_adc_mV[i] * monster_k[i].K_A;
-			else
-				i_motor_mA[i] = v_adc_mV[i] * monster_k[i].K_B;
-			
-			i_motor_mA[i] /= r_sense_Ohm;
+			i_motor_mA[i] = v_adc_mV[i] / r_sense_Ohm;
+			i_motor_mA[i] *= monster_k[i][HAL_GPIO_ReadPin(getGpioPort(i), getGpioPin(i))];
 			bemf_mV[i] = v_bat_mV * pwm_value[i] / 8191 - i_motor_mA[i] * r_motor_mOhm[i] / 1000;
+			d_global[i] = bemf_mV[i] * 2 * PI / 60;
 		}
-		pwm_value[MOTOR_B_R] += 10;
-		if (pwm_value[MOTOR_B_R] >= 8191) 
-			pwm_value[MOTOR_B_R] = 0;
+		
+		// control
+		if (HAL_GPIO_ReadPin(BUT_GPIO_Port, BUT_Pin) == GPIO_PIN_SET) 
+			u[MOTOR_B_R] = 879.0;
+		else
+			u[MOTOR_B_R] = 293.0;
+		pwm_value[MOTOR_B_R] = (uint16_t)(u[MOTOR_B_R] * 8191 / 1172.0);
 		PWM_B_R = pwm_value[MOTOR_B_R];
-		PWM_B_L = (uint16_t)(bemf_mV[MOTOR_B_R] * 8191 / 12000.0);
 
+		j++;
+		if (j == 5) {
+			j = 0;
+			osSemaphoreRelease(SysIdBinarySemHandle);
+		}
+		HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
   }
   /* USER CODE END 5 */ 
 }
@@ -675,10 +703,75 @@ void StartControlTask(void const * argument)
 void StartSysIdTask(void const * argument)
 {
   /* USER CODE BEGIN StartSysIdTask */
+	float32_t P_n[MOTOR_MAX][16] = {	{	10.0,	0.0,	0.0,	0.0,			\
+																			0.0, 	10.0,	0.0,	0.0,			\
+																			0.0, 	0.0,	10.0,	0.0,			\
+																			0.0, 	0.0,	0.0,	10.0	},	\
+																		{	10.0,	0.0,	0.0,	0.0,			\
+																			0.0, 	10.0,	0.0,	0.0,			\
+																			0.0, 	0.0,	10.0,	0.0,			\
+																			0.0, 	0.0,	0.0,	10.0	},	\
+																		{	10.0,	0.0,	0.0,	0.0,			\
+																			0.0, 	10.0,	0.0,	0.0,			\
+																			0.0, 	0.0,	10.0,	0.0,			\
+																			0.0, 	0.0,	0.0,	10.0	},	\
+																		{	10.0,	0.0,	0.0,	0.0,			\
+																			0.0, 	10.0,	0.0,	0.0,			\
+																			0.0, 	0.0,	10.0,	0.0,			\
+																			0.0, 	0.0,	0.0,	10.0	}	};
+	float32_t u_n[MOTOR_MAX][4], k_n[4], aux41[4], aux14[4], aux44[16];
+	float32_t a = 0.95, aux, e_n, y_n, d[MOTOR_MAX];
+	float32_t ainv = 1/a;
+	uint8_t i, j;
+
+	arm_matrix_instance_f32 mP_n[MOTOR_MAX];
+	arm_matrix_instance_f32 mk_n;
+	arm_matrix_instance_f32 mu_n[MOTOR_MAX];
+	arm_matrix_instance_f32 muT_n[MOTOR_MAX];
+	arm_matrix_instance_f32 maux41;
+	arm_matrix_instance_f32 maux14;
+	arm_matrix_instance_f32 maux44;
+	
+	for (i = 0; i < MOTOR_MAX; i++) {
+		arm_mat_init_f32(&mP_n[i], 4, 4, P_n[i]);
+		arm_mat_init_f32(&mu_n[i], 4, 1, u_n[i]);
+		arm_mat_init_f32(&muT_n[i], 1, 4, u_n[i]);
+	}
+	arm_mat_init_f32(&mk_n, 4, 1, k_n);
+	arm_mat_init_f32(&maux41, 4, 1, aux41);
+	arm_mat_init_f32(&maux14, 1, 4, aux14);
+	arm_mat_init_f32(&maux44, 4, 4, aux44);
+	
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+    osSemaphoreWait(SysIdBinarySemHandle, osWaitForever);
+		HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+		for (i = 0; i < MOTOR_MAX; i++) {
+			for (j = 0; j < 4; j++) {
+				u_n[i][j] = u_n_global[i][j];
+			}
+			d[i] = d_global[i];
+			
+			//RLS motor i
+			arm_mat_mult_f32(&mP_n[i], &mu_n[i], &maux41);
+			arm_dot_prod_f32(u_n[i], aux41, 4, &aux);
+			aux = 1/(a + aux);
+			arm_scale_f32(aux41, aux, k_n, 4);
+			
+			arm_dot_prod_f32(w_n[i], u_n[i], 4, &y_n);
+			
+			e_n = d[i] - y_n;
+			
+			arm_scale_f32(k_n, e_n, aux41, 4);
+			arm_add_f32(w_n[i], aux41, w_n[i], 4);
+			
+			arm_mat_mult_f32(&muT_n[i], &mP_n[i], &maux14);
+			arm_mat_mult_f32(&mk_n, &maux14, &maux44);
+			arm_mat_sub_f32(&mP_n[i], &maux44, &maux44);
+			arm_mat_scale_f32(&maux44, ainv, &mP_n[i]);
+		}
+		HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
   }
   /* USER CODE END StartSysIdTask */
 }
@@ -706,7 +799,7 @@ void StartI2CTask(void const * argument)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 /* USER CODE BEGIN Callback 0 */
-	// TIM3 callback, 100Hz interrupt (sampling frec)
+	// TIM3 callback, 1000Hz interrupt (sampling frec)
 	if (htim->Instance == TIM3) {
 		HAL_ADC_Start_DMA(&hadc1, (uint32_t *)adc_scan, SCAN_MAX);
 	}

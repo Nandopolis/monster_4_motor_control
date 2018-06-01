@@ -43,3 +43,7 @@ monster_4_motor_control\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/inclu
 monster_4_motor_control\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 monster_4_motor_control\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 monster_4_motor_control\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+monster_4_motor_control\main.o: ../Drivers/CMSIS/Include/arm_math.h
+monster_4_motor_control\main.o: ../Drivers/CMSIS/Include/core_cm3.h
+monster_4_motor_control\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+monster_4_motor_control\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

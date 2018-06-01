@@ -29,6 +29,7 @@
 "monster_4_motor_control\stm32f1xx_it.o"
 "monster_4_motor_control\main.o"
 "monster_4_motor_control\startup_stm32f103xb.o"
+"C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Lib\ARM\arm_cortexM3l_math.lib"
 --library_type=microlib --strict --scatter "monster_4_motor_control\monster_4_motor_control.sct"
 --diag_suppress=L6329 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
