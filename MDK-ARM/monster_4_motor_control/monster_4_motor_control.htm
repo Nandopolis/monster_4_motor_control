@@ -3,7 +3,7 @@
 <title>Static Call Graph - [monster_4_motor_control\monster_4_motor_control.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image monster_4_motor_control\monster_4_motor_control.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060020: Last Updated: Fri Jun 01 11:04:48 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060020: Last Updated: Mon Jun 04 16:47:34 2018
 <BR><P>
 <H3>Maximum Stack Usage =        752 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -268,6 +268,7 @@ Global Symbols
 <LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StartSysIdTask
+<LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StartControlTask
 </UL>
 
 <P><STRONG><a name="[48]"></a>arm_scale_f32</STRONG> (Thumb, 120 bytes, Stack size 24 bytes, arm_scale_f32.o(.text))
@@ -1041,7 +1042,7 @@ Global Symbols
 <P><STRONG><a name="[1]"></a>NMI_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f1xx_it.o(i.NMI_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f103xb.o(RESET)
 </UL>
-<P><STRONG><a name="[3e]"></a>StartControlTask</STRONG> (Thumb, 532 bytes, Stack size 80 bytes, main.o(i.StartControlTask))
+<P><STRONG><a name="[3e]"></a>StartControlTask</STRONG> (Thumb, 562 bytes, Stack size 80 bytes, main.o(i.StartControlTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = StartControlTask &rArr; osSemaphoreWait &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADCEx_Calibration_Start
@@ -1051,6 +1052,7 @@ Global Symbols
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Start
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
+<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arm_dot_prod_f32
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
 <LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub

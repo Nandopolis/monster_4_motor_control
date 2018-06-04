@@ -104,6 +104,7 @@ float32_t w_n[MOTOR_MAX][4] =	{	{0.0, 0.0, 0.0, 0.0}, \
 																{0.0, 0.0, 0.0, 0.0}, \
 																{0.0, 0.0, 0.0, 0.0}, \
 																{0.0, 0.0, 0.0, 0.0}};
+float32_t y_est, error;
 uint16_t r_motor_mOhm[MOTOR_MAX] = {6500, 5650, 0, 0};
 uint16_t monster_k[MOTOR_MAX][K_MAX] = {{2108, 4322}, {0, 0}, {0, 0}, {0, 0}};
 uint16_t r_sense_Ohm = 1500;
@@ -681,6 +682,9 @@ void StartControlTask(void const * argument)
 			d_global[i] = bemf_mV[i] * 2 * PI / 60;
 		}
 		
+		arm_dot_prod_f32(w_n[MOTOR_B_R], u_n_global[MOTOR_B_R], 4, &y_est);
+		error = d_global[MOTOR_B_R] - y_est;
+		
 		// control
 		if (HAL_GPIO_ReadPin(BUT_GPIO_Port, BUT_Pin) == GPIO_PIN_SET) 
 			u[MOTOR_B_R] = 879.0;
@@ -720,7 +724,7 @@ void StartSysIdTask(void const * argument)
 																			0.0, 	0.0,	10.0,	0.0,			\
 																			0.0, 	0.0,	0.0,	10.0	}	};
 	float32_t u_n[MOTOR_MAX][4], k_n[4], aux41[4], aux14[4], aux44[16];
-	float32_t a = 0.95, aux, e_n, y_n, d[MOTOR_MAX];
+	float32_t a = 0.995, aux, e_n, y_n, d[MOTOR_MAX];
 	float32_t ainv = 1/a;
 	uint8_t i, j;
 
