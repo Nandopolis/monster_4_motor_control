@@ -98,9 +98,16 @@ enum MONSTER_K {
 	
 	K_MAX,
 };
+enum W_PARAMS {
+	THETA,
+	A,
+	B,
+	
+	PARAMS_MAX,
+};
 float32_t bemf_mV[MOTOR_MAX] = {0.0, 0.0, 0.0, 0.0};
 float32_t d_global[MOTOR_MAX] = {0.0, 0.0, 0.0, 0.0};	// vel estimation in rad/s
-float32_t w_n[MOTOR_MAX][4] =	{	{0.0, 0.0, 0.0, 0.0}, \
+float32_t w_n[MOTOR_MAX][4] =	{	{1.0, 1.0, 1.0, 0.0}, \
 																{0.0, 0.0, 0.0, 0.0}, \
 																{0.0, 0.0, 0.0, 0.0}, \
 																{0.0, 0.0, 0.0, 0.0}};
@@ -635,6 +642,7 @@ void StartControlTask(void const * argument)
 
   /* USER CODE BEGIN 5 */
 	uint8_t i, j;
+	float32_t aux, aux2, aux3, aux4;
 	float32_t u[MOTOR_MAX] = {0.0, 0.0, 0.0, 0.0};
 	uint16_t pwm_value[MOTOR_MAX] = {0, 0, 0, 0};
 	float32_t v_adc_mV[SCAN_MAX];
@@ -682,8 +690,18 @@ void StartControlTask(void const * argument)
 			d_global[i] = bemf_mV[i] * 2 * PI / 60;
 		}
 		
-		arm_dot_prod_f32(w_n[MOTOR_B_R], u_n_global[MOTOR_B_R], 4, &y_est);
+		aux = expf(-w_n[MOTOR_B_R][B] * (u[MOTOR_B_R] - w_n[MOTOR_B_R][THETA]));
+		y_est = w_n[MOTOR_B_R][A] * (1 - aux) / (1 + aux);
 		error = d_global[MOTOR_B_R] - y_est;
+		
+		aux = y_est / w_n[MOTOR_B_R][A];
+		aux2 = w_n[MOTOR_B_R][A] / 2.0;
+		aux3 = (1 + aux) * (1 - aux);
+		aux4 = 1.0 * error;
+		w_n[MOTOR_B_R][A] += aux4 * aux;
+		aux = w_n[MOTOR_B_R][B];
+		w_n[MOTOR_B_R][B] += aux4 * (aux2 * (u[MOTOR_B_R] - w_n[MOTOR_B_R][THETA]) * aux3);
+		w_n[MOTOR_B_R][THETA] += aux4 * (-aux2 * aux * aux3);
 		
 		// control
 		if (HAL_GPIO_ReadPin(BUT_GPIO_Port, BUT_Pin) == GPIO_PIN_SET) 
@@ -696,7 +714,7 @@ void StartControlTask(void const * argument)
 		j++;
 		if (j == 5) {
 			j = 0;
-			osSemaphoreRelease(SysIdBinarySemHandle);
+			// osSemaphoreRelease(SysIdBinarySemHandle);
 		}
 		HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
   }
