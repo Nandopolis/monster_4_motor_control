@@ -105,13 +105,29 @@ enum W_PARAMS {
 	
 	PARAMS_MAX,
 };
+enum PID {
+	P,
+	I,
+	D,
+	
+	PID_MAX
+};
 float32_t bemf_mV[MOTOR_MAX] = {0.0, 0.0, 0.0, 0.0};
 float32_t d_global[MOTOR_MAX] = {0.0, 0.0, 0.0, 0.0};	// vel estimation in rad/s
-float32_t w_n[MOTOR_MAX][4] =	{	{1.0, 1.0, 1.0, 0.0}, \
-																{0.0, 0.0, 0.0, 0.0}, \
-																{0.0, 0.0, 0.0, 0.0}, \
-																{0.0, 0.0, 0.0, 0.0}};
-float32_t y_est, error;
+float32_t r_global[MOTOR_MAX] = {0.0, 0.0, 0.0, 0.0};	// vel desired in rad/s
+float32_t w_n[MOTOR_MAX][2] =	{	{0.188, 0.776}, \
+																{0.75, 0.2}, \
+																{0.75, 0.2}, \
+																{0.75, 0.2}	};
+float32_t pid_k[MOTOR_MAX][PID_MAX] = {	{1.0, 75.0, 0.005}, \
+																				{0.0, 0.0, 0.0}, \
+																				{0.0, 0.0, 0.0}, \
+																				{0.0, 0.0, 0.0}	};
+float32_t pid_e[MOTOR_MAX][PID_MAX] = {	{0.0, 0.0, 0.0}, \
+																				{0.0, 0.0, 0.0}, \
+																				{0.0, 0.0, 0.0}, \
+																				{0.0, 0.0, 0.0}	};
+float32_t y_est[MOTOR_MAX], error;
 uint16_t r_motor_mOhm[MOTOR_MAX] = {6500, 5650, 0, 0};
 uint16_t monster_k[MOTOR_MAX][K_MAX] = {{2108, 4322}, {0, 0}, {0, 0}, {0, 0}};
 uint16_t r_sense_Ohm = 1500;
@@ -604,7 +620,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *AdcHandle)
 	}
 }
 
-GPIO_TypeDef *getGpioPort(uint8_t i) {
+GPIO_TypeDef *getPort(uint8_t i) {
 	switch(i) {
 		case MOTOR_B_R:
 			return INA_B_R_GPIO_Port;
@@ -619,7 +635,7 @@ GPIO_TypeDef *getGpioPort(uint8_t i) {
 	}
 }
 
-uint16_t getGpioPin(uint8_t i) {
+uint16_t getPin(uint8_t i) {
 	switch(i) {
 		case MOTOR_B_R:
 			return INA_B_R_Pin;
@@ -642,8 +658,10 @@ void StartControlTask(void const * argument)
 
   /* USER CODE BEGIN 5 */
 	uint8_t i, j;
-	float32_t aux, aux2, aux3, aux4;
+	float32_t aux1, aux2, aux3, aux4;
 	float32_t u[MOTOR_MAX] = {0.0, 0.0, 0.0, 0.0};
+	float32_t r[MOTOR_MAX] = {0.0, 0.0, 0.0, 0.0};
+	float32_t a = 0.01 / (0.01 + 0.05);
 	uint16_t pwm_value[MOTOR_MAX] = {0, 0, 0, 0};
 	float32_t v_adc_mV[SCAN_MAX];
 	float32_t v_bat_mV;
@@ -659,7 +677,6 @@ void StartControlTask(void const * argument)
 	
 	HAL_GPIO_WritePin(INA_B_R_GPIO_Port, INA_B_R_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(INB_B_R_GPIO_Port, INB_B_R_Pin, GPIO_PIN_RESET);
-	pwm_value[MOTOR_B_R] = 0;
 	PWM_B_R = pwm_value[MOTOR_B_R];
 	
   /* Infinite loop */
@@ -670,9 +687,7 @@ void StartControlTask(void const * argument)
 		
 		// data update
 		for (i = 0; i < MOTOR_MAX; i++) {
-			u_n_global[i][3] = u_n_global[i][2];
-			u_n_global[i][2] = d_global[i];
-			u_n_global[i][1] = u_n_global[i][0];
+			u_n_global[i][1] = d_global[i];
 			u_n_global[i][0] = u[i];
 		}
 		
@@ -681,40 +696,56 @@ void StartControlTask(void const * argument)
 			v_adc_mV[i] = adc_scan_avg[i] * 3300.0 / 4095;
 		}
 		v_bat_mV = v_adc_mV[MOTOR_MAX] * 13.16 / 3.3;
-		// v_bat_mV = 12000.0;
-		
-		for (i = 0; i < MOTOR_MAX; i++) {
-			i_motor_mA[i] = v_adc_mV[i] / r_sense_Ohm;
-			i_motor_mA[i] *= monster_k[i][HAL_GPIO_ReadPin(getGpioPort(i), getGpioPin(i))];
-			bemf_mV[i] = v_bat_mV * pwm_value[i] / 8191 - i_motor_mA[i] * r_motor_mOhm[i] / 1000;
-			d_global[i] = bemf_mV[i] * 2 * PI / 60;
-		}
-		
-		aux = expf(-w_n[MOTOR_B_R][B] * (u[MOTOR_B_R] - w_n[MOTOR_B_R][THETA]));
-		y_est = w_n[MOTOR_B_R][A] * (1 - aux) / (1 + aux);
-		error = d_global[MOTOR_B_R] - y_est;
-		
-		aux = y_est / w_n[MOTOR_B_R][A];
-		aux2 = w_n[MOTOR_B_R][A] / 2.0;
-		aux3 = (1 + aux) * (1 - aux);
-		aux4 = 1.0 * error;
-		w_n[MOTOR_B_R][A] += aux4 * aux;
-		aux = w_n[MOTOR_B_R][B];
-		w_n[MOTOR_B_R][B] += aux4 * (aux2 * (u[MOTOR_B_R] - w_n[MOTOR_B_R][THETA]) * aux3);
-		w_n[MOTOR_B_R][THETA] += aux4 * (-aux2 * aux * aux3);
 		
 		// control
 		if (HAL_GPIO_ReadPin(BUT_GPIO_Port, BUT_Pin) == GPIO_PIN_SET) 
-			u[MOTOR_B_R] = 879.0;
+			r_global[MOTOR_B_R] = 879.0;
 		else
-			u[MOTOR_B_R] = 293.0;
-		pwm_value[MOTOR_B_R] = (uint16_t)(u[MOTOR_B_R] * 8191 / 1172.0);
+			r_global[MOTOR_B_R] = 293.0;
+		
+		for (i = 0; i < MOTOR_MAX; i++) {
+			aux1 = d_global[i];
+			
+			i_motor_mA[i] = v_adc_mV[i] / r_sense_Ohm;
+			i_motor_mA[i] *= monster_k[i][HAL_GPIO_ReadPin(getPort(i), getPin(i))];
+			bemf_mV[i] = v_bat_mV * pwm_value[i] / 8191 - i_motor_mA[i];
+			bemf_mV[i] -= i_motor_mA[i] * r_motor_mOhm[i] / 1000;
+			d_global[i] = bemf_mV[i] * 2 * PI / 60;
+			arm_dot_prod_f32(w_n[i], u_n_global[i], 2, &y_est[i]);
+			
+			r[i] = (1 - a) * r[i] + a * r_global[i];
+			
+			pid_e[i][P] = r[i] - y_est[i];
+			u[i] = pid_k[i][P] * pid_e[i][P];
+			pid_e[i][D] = (aux1 - d_global[i]) / 0.01;
+			u[i] += pid_k[i][D] * pid_e[i][D];
+			pid_e[i][I] += pid_e[i][P] * 0.01;
+			aux2 = pid_k[i][I] * pid_e[i][I];
+			if (aux2 > 1172.0) {
+				pid_e[i][I] = 1172.0;
+			}
+			if (aux2 < 0.0) {
+				pid_e[i][I] = 0.0;
+			}
+			u[i] += aux2;
+			
+			aux3 = d_global[i] * 1.0;
+			if (u[i] > 1172.0) {
+				u[i] = 1172.0;
+			}
+			if (u[i] < aux3) {
+				u[i] = aux3;
+			}
+			// u[i] = r[i];
+			pwm_value[MOTOR_B_R] = (uint16_t)(u[MOTOR_B_R] * 8191 / 1172.0);
+		}
+		
 		PWM_B_R = pwm_value[MOTOR_B_R];
 
 		j++;
 		if (j == 5) {
 			j = 0;
-			// osSemaphoreRelease(SysIdBinarySemHandle);
+			osSemaphoreRelease(SysIdBinarySemHandle);
 		}
 		HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
   }
@@ -725,24 +756,16 @@ void StartControlTask(void const * argument)
 void StartSysIdTask(void const * argument)
 {
   /* USER CODE BEGIN StartSysIdTask */
-	float32_t P_n[MOTOR_MAX][16] = {	{	10.0,	0.0,	0.0,	0.0,			\
-																			0.0, 	10.0,	0.0,	0.0,			\
-																			0.0, 	0.0,	10.0,	0.0,			\
-																			0.0, 	0.0,	0.0,	10.0	},	\
-																		{	10.0,	0.0,	0.0,	0.0,			\
-																			0.0, 	10.0,	0.0,	0.0,			\
-																			0.0, 	0.0,	10.0,	0.0,			\
-																			0.0, 	0.0,	0.0,	10.0	},	\
-																		{	10.0,	0.0,	0.0,	0.0,			\
-																			0.0, 	10.0,	0.0,	0.0,			\
-																			0.0, 	0.0,	10.0,	0.0,			\
-																			0.0, 	0.0,	0.0,	10.0	},	\
-																		{	10.0,	0.0,	0.0,	0.0,			\
-																			0.0, 	10.0,	0.0,	0.0,			\
-																			0.0, 	0.0,	10.0,	0.0,			\
-																			0.0, 	0.0,	0.0,	10.0	}	};
-	float32_t u_n[MOTOR_MAX][4], k_n[4], aux41[4], aux14[4], aux44[16];
-	float32_t a = 0.995, aux, e_n, y_n, d[MOTOR_MAX];
+	float32_t P_n[MOTOR_MAX][4] = {	{	10.0,	0.0,			\
+																		0.0, 	10.0	},	\
+																	{	10.0,	0.0,			\
+																		0.0, 	10.0	},	\
+																	{	10.0,	0.0,			\
+																		0.0, 	10.0	},	\
+																	{	10.0,	0.0,			\
+																		0.0, 	10.0,	}	};
+	float32_t u_n[MOTOR_MAX][2], k_n[2], aux41[2], aux14[2], aux44[4];
+	float32_t a = 0.999, aux, e_n, y_n, d[MOTOR_MAX];
 	float32_t ainv = 1/a;
 	uint8_t i, j;
 
@@ -755,14 +778,14 @@ void StartSysIdTask(void const * argument)
 	arm_matrix_instance_f32 maux44;
 	
 	for (i = 0; i < MOTOR_MAX; i++) {
-		arm_mat_init_f32(&mP_n[i], 4, 4, P_n[i]);
-		arm_mat_init_f32(&mu_n[i], 4, 1, u_n[i]);
-		arm_mat_init_f32(&muT_n[i], 1, 4, u_n[i]);
+		arm_mat_init_f32(&mP_n[i], 2, 2, P_n[i]);
+		arm_mat_init_f32(&mu_n[i], 2, 1, u_n[i]);
+		arm_mat_init_f32(&muT_n[i], 1, 2, u_n[i]);
 	}
-	arm_mat_init_f32(&mk_n, 4, 1, k_n);
-	arm_mat_init_f32(&maux41, 4, 1, aux41);
-	arm_mat_init_f32(&maux14, 1, 4, aux14);
-	arm_mat_init_f32(&maux44, 4, 4, aux44);
+	arm_mat_init_f32(&mk_n, 2, 1, k_n);
+	arm_mat_init_f32(&maux41, 2, 1, aux41);
+	arm_mat_init_f32(&maux14, 1, 2, aux14);
+	arm_mat_init_f32(&maux44, 2, 2, aux44);
 	
   /* Infinite loop */
   for(;;)
@@ -770,23 +793,23 @@ void StartSysIdTask(void const * argument)
     osSemaphoreWait(SysIdBinarySemHandle, osWaitForever);
 		HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
 		for (i = 0; i < MOTOR_MAX; i++) {
-			for (j = 0; j < 4; j++) {
+			for (j = 0; j < 2; j++) {
 				u_n[i][j] = u_n_global[i][j];
 			}
 			d[i] = d_global[i];
 			
 			//RLS motor i
 			arm_mat_mult_f32(&mP_n[i], &mu_n[i], &maux41);
-			arm_dot_prod_f32(u_n[i], aux41, 4, &aux);
+			arm_dot_prod_f32(u_n[i], aux41, 2, &aux);
 			aux = 1/(a + aux);
-			arm_scale_f32(aux41, aux, k_n, 4);
+			arm_scale_f32(aux41, aux, k_n, 2);
 			
-			arm_dot_prod_f32(w_n[i], u_n[i], 4, &y_n);
+			arm_dot_prod_f32(w_n[i], u_n[i], 2, &y_n);
 			
 			e_n = d[i] - y_n;
 			
-			arm_scale_f32(k_n, e_n, aux41, 4);
-			arm_add_f32(w_n[i], aux41, w_n[i], 4);
+			arm_scale_f32(k_n, e_n, aux41, 2);
+			arm_add_f32(w_n[i], aux41, w_n[i], 2);
 			
 			arm_mat_mult_f32(&muT_n[i], &mP_n[i], &maux14);
 			arm_mat_mult_f32(&mk_n, &maux14, &maux44);
