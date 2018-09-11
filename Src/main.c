@@ -72,7 +72,7 @@ osThreadId SysIdTaskHandle;
 uint32_t SysIdTaskBuffer[ 1024 ];
 osStaticThreadDef_t SysIdTaskControlBlock;
 osThreadId I2CTaskHandle;
-uint32_t I2CTaskBuffer[ 128 ];
+uint32_t I2CTaskBuffer[ 256 ];
 osStaticThreadDef_t I2CTaskControlBlock;
 osSemaphoreId SysIdBinarySemHandle;
 osStaticSemaphoreDef_t SysIdBinarySemControlBlock;
@@ -112,31 +112,72 @@ enum PID {
 	
 	PID_MAX
 };
-float32_t bemf_mV[MOTOR_MAX] = {0.0, 0.0, 0.0, 0.0};
-float32_t d_global[MOTOR_MAX] = {0.0, 0.0, 0.0, 0.0};	// vel estimation in rad/s
-float32_t r_global[MOTOR_MAX] = {0.0, 0.0, 0.0, 0.0};	// vel desired in rad/s
-float32_t w_n[MOTOR_MAX][2] =	{	{0.188, 0.776}, \
-																{0.75, 0.2}, \
-																{0.75, 0.2}, \
-																{0.75, 0.2}	};
-float32_t pid_k[MOTOR_MAX][PID_MAX] = {	{1.0, 75.0, 0.005}, \
-																				{0.0, 0.0, 0.0}, \
-																				{0.0, 0.0, 0.0}, \
-																				{0.0, 0.0, 0.0}	};
+
+enum DATA_enum {
+	BEMF_B_R,
+	BEMF_B_L,
+	BEMF_F_R,
+	BEMF_F_L,
+	
+	REF_B_R,
+	REF_B_L,
+	REF_F_R,
+	REF_F_L,
+	
+	VEL_B_R,
+	VEL_B_L,
+	VEL_F_R,
+	VEL_F_L,
+	
+	VEL_EST_B_R,
+	VEL_EST_B_L,
+	VEL_EST_F_R,
+	VEL_EST_F_L,
+	
+	PID_KP_B_R,
+	PID_KI_B_R,
+	PID_KD_B_R,
+	PID_KP_B_L,
+	PID_KI_B_L,
+	PID_KD_B_L,
+	PID_KP_F_R,
+	PID_KI_F_R,
+	PID_KD_F_R,
+	PID_KP_F_L,
+	PID_KI_F_L,
+	PID_KD_F_L,
+	
+	DATA_MAX,
+};
+struct Data{
+	float32_t bemf_mV[MOTOR_MAX];
+	float32_t r_global[MOTOR_MAX];	// vel desired in rad/s
+	float32_t d_global[MOTOR_MAX];	// vel estimation in rad/s
+	float32_t y_est[MOTOR_MAX];
+	float32_t pid_k[MOTOR_MAX][PID_MAX];
+};
+union DataMem {
+	float32_t data_buffer[DATA_MAX];
+	struct Data data;
+} data_mem;
+	
 float32_t pid_e[MOTOR_MAX][PID_MAX] = {	{0.0, 0.0, 0.0}, \
 																				{0.0, 0.0, 0.0}, \
 																				{0.0, 0.0, 0.0}, \
 																				{0.0, 0.0, 0.0}	};
-float32_t y_est[MOTOR_MAX], error;
-uint16_t r_motor_mOhm[MOTOR_MAX] = {6500, 5650, 0, 0};
-uint16_t monster_k[MOTOR_MAX][K_MAX] = {{2108, 4322}, {0, 0}, {0, 0}, {0, 0}};
+float32_t w_n[MOTOR_MAX][2] =	{	{0.188, 0.776}, \
+																{0.188, 0.776}, \
+																{0.188, 0.776}, \
+																{0.188, 0.776}	};
+uint16_t r_motor_mOhm[MOTOR_MAX] = {1500, 1100, 1200, 1300};
+uint16_t monster_k[MOTOR_MAX][K_MAX] = {{9427, 12650}, {2108, 4322}, {0, 0}, {0, 0}};
 uint16_t r_sense_Ohm = 1500;
 volatile uint16_t adc_scan[SCAN_MAX] = {0, 0, 0, 0};
 volatile uint16_t adc_scan_avg[SCAN_MAX] = {0, 0, 0, 0};
-float32_t u_n_global[MOTOR_MAX][4] = {{0.0, 0.0, 0.0, 0.0}, \
-																			{0.0, 0.0, 0.0, 0.0}, \
-																			{0.0, 0.0, 0.0, 0.0}, \
-																			{0.0, 0.0, 0.0, 0.0}};
+float32_t u_n_global[MOTOR_MAX][2] = {{0.0, 0.0}, \
+																			{0.0, 0.0}, \
+																			{0.0, 0.0}, \
+																			{0.0, 0.0}};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -167,7 +208,15 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-
+	arm_fill_f32(0.0, data_mem.data.bemf_mV, MOTOR_MAX);
+	arm_fill_f32(0.0, data_mem.data.r_global, MOTOR_MAX);
+	arm_fill_f32(0.0, data_mem.data.d_global, MOTOR_MAX);
+	arm_fill_f32(0.0, data_mem.data.y_est, MOTOR_MAX);
+	float32_t pid[] = {1.0, 75.0, 0.005};
+	arm_copy_f32 (pid, data_mem.data.pid_k[0], PID_MAX);
+	arm_copy_f32 (pid, data_mem.data.pid_k[1], PID_MAX);
+	arm_copy_f32 (pid, data_mem.data.pid_k[2], PID_MAX);
+	arm_copy_f32 (pid, data_mem.data.pid_k[3], PID_MAX);
   /* USER CODE END 1 */
 
   /* MCU Configuration----------------------------------------------------------*/
@@ -225,7 +274,7 @@ int main(void)
 
   /* Create the thread(s) */
   /* definition and creation of ControlTask */
-  osThreadStaticDef(ControlTask, StartControlTask, osPriorityHigh, 0, 512, ControlTaskBuffer, &ControlTaskControlBlock);
+  osThreadStaticDef(ControlTask, StartControlTask, osPriorityAboveNormal, 0, 512, ControlTaskBuffer, &ControlTaskControlBlock);
   ControlTaskHandle = osThreadCreate(osThread(ControlTask), NULL);
 
   /* definition and creation of SysIdTask */
@@ -233,7 +282,7 @@ int main(void)
   SysIdTaskHandle = osThreadCreate(osThread(SysIdTask), NULL);
 
   /* definition and creation of I2CTask */
-  osThreadStaticDef(I2CTask, StartI2CTask, osPriorityIdle, 0, 128, I2CTaskBuffer, &I2CTaskControlBlock);
+  osThreadStaticDef(I2CTask, StartI2CTask, osPriorityBelowNormal, 0, 256, I2CTaskBuffer, &I2CTaskControlBlock);
   I2CTaskHandle = osThreadCreate(osThread(I2CTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
@@ -620,6 +669,18 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *AdcHandle)
 	}
 }
 
+void HAL_I2C_SlaveRxCpltCallback(I2C_HandleTypeDef *  hi2c) {
+	if (HAL_I2C_GetState(&hi2c1) == HAL_I2C_STATE_READY) {
+		osSemaphoreRelease(i2cBinarySemHandle);
+	}
+}
+
+void HAL_I2C_SlaveTxCpltCallback(I2C_HandleTypeDef *  hi2c) {
+	if (HAL_I2C_GetState(&hi2c1) == HAL_I2C_STATE_READY) {
+		osSemaphoreRelease(i2cBinarySemHandle);
+	}
+}
+
 GPIO_TypeDef *getPort(uint8_t i) {
 	switch(i) {
 		case MOTOR_B_R:
@@ -658,7 +719,7 @@ void StartControlTask(void const * argument)
 
   /* USER CODE BEGIN 5 */
 	uint8_t i, j;
-	float32_t aux1, aux2, aux3, aux4;
+	float32_t aux1, aux2, aux3;
 	float32_t u[MOTOR_MAX] = {0.0, 0.0, 0.0, 0.0};
 	float32_t r[MOTOR_MAX] = {0.0, 0.0, 0.0, 0.0};
 	float32_t a = 0.01 / (0.01 + 0.05);
@@ -678,6 +739,9 @@ void StartControlTask(void const * argument)
 	HAL_GPIO_WritePin(INA_B_R_GPIO_Port, INA_B_R_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(INB_B_R_GPIO_Port, INB_B_R_Pin, GPIO_PIN_RESET);
 	PWM_B_R = pwm_value[MOTOR_B_R];
+	HAL_GPIO_WritePin(INA_B_L_GPIO_Port, INA_B_L_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(INB_B_L_GPIO_Port, INB_B_L_Pin, GPIO_PIN_RESET);
+	PWM_B_L = pwm_value[MOTOR_B_L];
 	
   /* Infinite loop */
   for(;;)
@@ -687,7 +751,7 @@ void StartControlTask(void const * argument)
 		
 		// data update
 		for (i = 0; i < MOTOR_MAX; i++) {
-			u_n_global[i][1] = d_global[i];
+			u_n_global[i][1] = data_mem.data.d_global[i];
 			u_n_global[i][0] = u[i];
 		}
 		
@@ -697,30 +761,30 @@ void StartControlTask(void const * argument)
 		}
 		v_bat_mV = v_adc_mV[MOTOR_MAX] * 13.16 / 3.3;
 		
-		// control
-		if (HAL_GPIO_ReadPin(BUT_GPIO_Port, BUT_Pin) == GPIO_PIN_SET) 
-			r_global[MOTOR_B_R] = 879.0;
-		else
-			r_global[MOTOR_B_R] = 293.0;
-		
 		for (i = 0; i < MOTOR_MAX; i++) {
-			aux1 = d_global[i];
+			aux1 = data_mem.data.d_global[i];
 			
 			i_motor_mA[i] = v_adc_mV[i] / r_sense_Ohm;
 			i_motor_mA[i] *= monster_k[i][HAL_GPIO_ReadPin(getPort(i), getPin(i))];
-			bemf_mV[i] = v_bat_mV * pwm_value[i] / 8191 - i_motor_mA[i];
-			bemf_mV[i] -= i_motor_mA[i] * r_motor_mOhm[i] / 1000;
-			d_global[i] = bemf_mV[i] * 2 * PI / 60;
-			arm_dot_prod_f32(w_n[i], u_n_global[i], 2, &y_est[i]);
+			data_mem.data.bemf_mV[i] = v_bat_mV * pwm_value[i] / 8191;
+			data_mem.data.bemf_mV[i] -= i_motor_mA[i] * r_motor_mOhm[i] / 1000;
+			data_mem.data.d_global[i] = data_mem.data.bemf_mV[i] * 2 * PI / 60;
+			arm_dot_prod_f32(w_n[i], u_n_global[i], 2, &data_mem.data.y_est[i]);
 			
-			r[i] = (1 - a) * r[i] + a * r_global[i];
+			// control
+			if (HAL_GPIO_ReadPin(BUT_GPIO_Port, BUT_Pin) == GPIO_PIN_SET) 
+				data_mem.data.r_global[i] = 850.0;
+			else
+				data_mem.data.r_global[i] = 650.0;
 			
-			pid_e[i][P] = r[i] - y_est[i];
-			u[i] = pid_k[i][P] * pid_e[i][P];
-			pid_e[i][D] = (aux1 - d_global[i]) / 0.01;
-			u[i] += pid_k[i][D] * pid_e[i][D];
+			r[i] = (1 - a) * r[i] + a * data_mem.data.r_global[i];
+			
+			pid_e[i][P] = r[i] - data_mem.data.y_est[i];
+			u[i] = data_mem.data.pid_k[i][P] * pid_e[i][P];
+			pid_e[i][D] = (aux1 - data_mem.data.d_global[i]) / 0.01;
+			u[i] += data_mem.data.pid_k[i][D] * pid_e[i][D];
 			pid_e[i][I] += pid_e[i][P] * 0.01;
-			aux2 = pid_k[i][I] * pid_e[i][I];
+			aux2 = data_mem.data.pid_k[i][I] * pid_e[i][I];
 			if (aux2 > 1172.0) {
 				pid_e[i][I] = 1172.0;
 			}
@@ -729,7 +793,7 @@ void StartControlTask(void const * argument)
 			}
 			u[i] += aux2;
 			
-			aux3 = d_global[i] * 1.0;
+			aux3 = data_mem.data.d_global[i] * 1.0;
 			if (u[i] > 1172.0) {
 				u[i] = 1172.0;
 			}
@@ -737,10 +801,11 @@ void StartControlTask(void const * argument)
 				u[i] = aux3;
 			}
 			// u[i] = r[i];
-			pwm_value[MOTOR_B_R] = (uint16_t)(u[MOTOR_B_R] * 8191 / 1172.0);
+			pwm_value[i] = (uint16_t)(u[i] * 8191 / 1172.0);
 		}
 		
 		PWM_B_R = pwm_value[MOTOR_B_R];
+		PWM_B_L = pwm_value[MOTOR_B_L];
 
 		j++;
 		if (j == 5) {
@@ -796,7 +861,7 @@ void StartSysIdTask(void const * argument)
 			for (j = 0; j < 2; j++) {
 				u_n[i][j] = u_n_global[i][j];
 			}
-			d[i] = d_global[i];
+			d[i] = data_mem.data.d_global[i];
 			
 			//RLS motor i
 			arm_mat_mult_f32(&mP_n[i], &mu_n[i], &maux41);
@@ -825,10 +890,59 @@ void StartSysIdTask(void const * argument)
 void StartI2CTask(void const * argument)
 {
   /* USER CODE BEGIN StartI2CTask */
+	#define MASTER_REQ_READ    0x12
+	#define MASTER_REQ_WRITE   0x34
+	
+	uint8_t index_pointer = 0;
+  /* Buffer used for transmission */
+	union {
+		float32_t data;
+		uint8_t buffer[4];
+	} tx_data;
+	/* Buffer used for reception */
+	union {
+		float32_t data;
+		uint8_t buffer[4];
+	} rx_data;
+	uint8_t bTransferRequest = 0;
+	
+	HAL_StatusTypeDef status;
+
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+		do {
+			status = HAL_I2C_Slave_Receive_IT(&hi2c1, (uint8_t*)&bTransferRequest, 1);
+		}
+		while(status != HAL_OK);
+		// osSemaphoreWait(i2cBinarySemHandle, osWaitForever);
+		while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY);
+		
+		do {
+			status = HAL_I2C_Slave_Receive_IT(&hi2c1, (uint8_t*)&index_pointer, 1);
+		}
+		while(status != HAL_OK);
+		// osSemaphoreWait(i2cBinarySemHandle, osWaitForever);
+		while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY);
+		
+		if (bTransferRequest == MASTER_REQ_WRITE) {
+			do {
+				status = HAL_I2C_Slave_Receive_IT(&hi2c1, (uint8_t*)rx_data.buffer, 4);
+			}
+			while(status != HAL_OK);
+			// osSemaphoreWait(i2cBinarySemHandle, osWaitForever);
+			while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY);
+			data_mem.data_buffer[index_pointer] = rx_data.data;
+		}
+		else  {
+			tx_data.data = data_mem.data_buffer[index_pointer];
+			do {
+				status = HAL_I2C_Slave_Transmit_IT(&hi2c1, (uint8_t*)tx_data.buffer, 4);
+			}
+			while(status != HAL_OK);
+			// osSemaphoreWait(i2cBinarySemHandle, osWaitForever);
+			while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY);
+		}
   }
   /* USER CODE END StartI2CTask */
 }
